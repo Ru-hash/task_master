@@ -1,0 +1,12 @@
+{% extends "base.html"  %}
+{% load crispy_forms_tags %}
+{%block start%}
+<form method="POST" >
+	{%csrf_token%}
+	<legend>Task: {{ object.title }}</legend>
+	<p>{{ object.content }}</p>
+	{{ form|crispy }}
+	<button type="submit">Mark as Done</button>
+</form>
+
+{%endblock%}

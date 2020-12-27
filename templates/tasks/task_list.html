@@ -1,0 +1,10 @@
+{% extends "base.html"  %}
+
+{%block start%}
+{% for obj in object_list %}
+
+<h3><a href="{% url 'tasks:TaskDelete' obj.pk %}">{{ obj.title }}</a></h3>
+<p>{{ obj.content }}</p>
+
+{% endfor %}
+{%endblock%}
